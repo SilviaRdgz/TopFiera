@@ -8,6 +8,8 @@ For this traineship assignment I was asked to create a Progressive Web App (PWA)
 
 - Preferably Reactive programming using the powerful RxJS library
 
+Top Fiera is an application that allows the user to browse through the videos, tracks and albums provided by the Top40 API.
+
 # Must haves
 
 The application should:
