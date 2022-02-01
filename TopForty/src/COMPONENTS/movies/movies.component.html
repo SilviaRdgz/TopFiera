@@ -1,0 +1,21 @@
+<div class="topMovie-section">
+  <div class="topMovies-heading">
+    <h1>Top 40 Movies</h1>
+    <a routerLink="top40Movies">See More</a>
+  </div>
+  <div class="topMovies-section-scroll">
+    <cdk-virtual-scroll-viewport itemSize='40' class="scrolling-view" orientation="horizontal">
+      <div class="carousel" >
+        <mat-card class='card-container'  *cdkVirtualFor = 'let position of positions'>
+          <img mat-card-image [src]='position.cover_img_url_medium' alt="'movie-cover">
+        <mat-card-title class='card-content-title'>
+          {{position.title}}
+        </mat-card-title>
+        <mat-card-subtitle class='card-content-subtitle'>
+          {{position.credit}}
+        </mat-card-subtitle>
+    </mat-card>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="topAlbum-section">
+  <div class="topAlbum-heading">
+    <h1>Top 40 Albums</h1>
+    <a routerLink= 'top40Albums'>See More</a>
+  </div>
+    <div class="topAlbum-section-scroll">
+      <cdk-virtual-scroll-viewport itemSize='40' class="scrolling-view" orientation="horizontal">
+        <div class="carousel" >
+          <mat-card class='card-container'  *cdkVirtualFor = 'let position of Top40'>
+            <img mat-card-image [src]='position.cover_img_url_medium' alt="album-cover">
+          <mat-card-title class='card-content-title'>
+            {{position.credit}}
+          </mat-card-title>
+          <mat-card-subtitle class='card-content-subtitle'>
+            {{position.title}}
+          </mat-card-subtitle>
+      </mat-card>
+        </div>
+      </cdk-virtual-scroll-viewport>
+      </div>
+  </div>
+
+
+
+
+
+<!-- <div class=topAlbum-section-grid>
+  <mat-grid-list cols="2" rowHeight="100px">
+    <mat-grid-tile>A</mat-grid-tile>
+    <mat-grid-tile>B</mat-grid-tile>
+    <mat-grid-tile>C</mat-grid-tile>
+    <mat-grid-tile>D</mat-grid-tile>
+  </mat-grid-list>
+</div> -->
+
+
+
+

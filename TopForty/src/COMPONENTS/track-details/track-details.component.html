@@ -1,0 +1,87 @@
+<app-nav></app-nav>
+<div class="topTracksChart">
+    <div class="topTracks-filter">
+        <div class="view-bar-toogle">
+            <button class="video-btn" type="button" (click)="ShowVideoView()">
+              Videos
+            </button>
+            <button class="chart-btn" type="button" (click)="ShowChartView()">
+              Chart
+            </button>
+          </div>
+        <div class="filterByDate-container">
+            <div class="week-navigator">
+                <mat-form-field>
+                    <mat-select (selectionChange)="handleWeekChange($event)"
+                                placeholder='Select week'
+                                [value]="defaultSelectedWeek">
+                        <ng-container *ngFor="let week of availableWeeks$ | async">
+                            <mat-option [value]="week">
+                                {{week}}
+                            </mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="year-navigator">
+                <mat-form-field>
+                    <mat-select (selectionChange)="handleYearChange($event)"
+                                placeholder='Select year'
+                                [value]="defaultSelectedYear">
+                        <ng-container *ngFor="let year of years">
+                            <mat-option [value]="year">
+                                {{year}}
+                            </mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+      </div>
+
+    <div [class.video-view-hidden]="HideVideos" class='video-view'>
+    <ng-container *ngFor = 'let video of Top40$ | async'>
+      <youtube-player
+      videoId={{video.youtube_code}}
+      suggestedQuality='highres'
+      [height]='200'
+      [width]='400'
+      [startSeconds]='1'>
+    </youtube-player>
+    </ng-container>
+    </div>
+
+    <div [class.topTracks-chart]="ShowChart" class="topTracks-chart-hidden">
+        <table class='table'>
+                <tr>
+                  <th>No.</th>
+                  <th class='hide-col'>PREVIOUS</th>
+                  <th class='hide-col'>ACC</th>
+                  <th>APPLE MUSIC</th>
+                  <th>COVER</th>
+                  <th class='col-title'>TITLE</th>
+                  <th class='col-title'>ARTIST</th>
+                  <th class='hide-col'>LABEL</th>
+                </tr>
+                <ng-container *ngFor='let track of Top40$ | async'>
+                <tr>
+                  <td >{{track.position}}</td>
+                  <td class='hide-col'>{{track.prev_position}}</td>
+                  <td class='hide-col'>{{track.num_weeks_cumulative}}</td>
+                  <td>
+                      <a [href]='track.itunes_track_url'>
+                        <mat-icon>play_circle</mat-icon>
+                      </a>
+                      </td>
+                  <td>
+                      <img [src]="track.cover_img_url_small" alt="album-cover">
+                  </td>
+                  <td class='col'>{{track.title}}</td>
+                  <td class='col'>{{track.credit}}</td>
+                  <td class='hide-col'>{{track.label}}</td>
+                </tr>
+        </ng-container>
+    </table>
+</div>
+</div>
+<app-footer></app-footer>

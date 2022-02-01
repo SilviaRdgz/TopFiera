@@ -1,0 +1,20 @@
+{
+    "root": true,
+    "overrides": [
+      {
+        "files": [
+          "*.ts",
+          "*.js"
+        ],
+        "parserOptions": {
+          "project": [
+            "tsconfig.app.json"
+          ],
+          "createDefaultProgram": true
+        }
+      }
+    ],
+    "extends": [
+      "@pxlwidgets/eslint-config/angular"
+    ]
+  }

@@ -1,0 +1,85 @@
+.topMovie-section{
+    display: none;
+    width: 630px;
+    padding-top: 150px;
+}
+.topMovies-heading{
+    display: none;
+    
+    }
+a {
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5rem;
+    color: black;
+    padding-top: 30px
+    
+}
+a:hover {
+    font-family: 'Rampart One', cursive;
+}
+.carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50vh;
+    width: 20%;
+}
+.card-container {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px 0 5px;
+}
+.card-container img {
+    width: fit-content;
+}
+.card-content-title {
+    align-self: center;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.card-content-title:hover {
+    color: #f7d038
+}
+.card-content-subtitle {
+    align-self: center;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.scrolling-view {
+    display: flex;
+    flex-direction: row;
+    height: 60vh;
+    width: 87%;
+    margin:auto;
+    position: relative;
+}
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-self: center;
+}
+h2:hover{
+    border-bottom: 1px solid black;
+}
+
+@media only screen and (min-width: 769px){
+    .topMovie-section{
+        display: flex;
+        flex-direction: column;
+        margin-top: 150px;
+        width: 100%;
+    }
+    .topMovies-heading{
+        margin: 0 100px 0 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 10vh;
+        }
+}

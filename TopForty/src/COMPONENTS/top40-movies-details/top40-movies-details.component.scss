@@ -1,0 +1,91 @@
+.topmovie-chart {
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 70%;
+    background-color: white;
+    padding: 30px;
+    position: relative;
+    z-index: 0; //TODO: adjust all indexes
+}
+.topmovie-filter {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px black dotted;
+    padding-bottom: 10px;
+    position: -webkit-sticky; // this is for all Safari (Desktop & iOS), not for Chrome
+    top: 100px;
+    position: sticky;
+    z-index: 10; // any positive value, layer order is global
+}
+mat-form-field {
+    width: 120px;
+}
+.table {
+    border-spacing: 0;
+}
+.table th {
+    font-weight: bold;
+    font-size: 10px;
+    align-content: center;
+    background: #1a1a1a;
+    padding: 10px;
+    color: white;   
+    position: -webkit-sticky;
+    top: 170px;
+    position: sticky;
+    z-index: 10; 
+}
+.table td {
+    text-align: center;
+    text-transform: capitalize;
+    position: sticky;
+    z-index: 0; 
+    font-size: 10px;
+}
+img {
+    width: 50px;
+    height: 50px;
+}
+.hide-col{
+    display: none;
+}
+
+@media only screen and (min-width: 768px){
+    .topmovie-chart {
+        margin-top: 130px;
+        width: 85%;
+    }
+    mat-form-field {
+        width: 100%;
+    }
+   
+    .table th {
+        font-size: 1rem;
+        top: 170px;
+    }
+    .table td {
+        font-size: 1rem;
+    }
+    .hide-col{
+        display: revert;
+    }
+    img {
+        width: 80px;
+        height: 80px;
+    }
+    .col-title{
+        text-align: left !important;
+        padding-left: 0 !important;
+    }
+    .col {
+        width: 20%;
+       text-align: left !important;
+    }
+}

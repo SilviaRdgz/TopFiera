@@ -1,0 +1,54 @@
+<nav>
+    <div class='nav-container-active'>
+        <div class="nav-title">
+        <h1 routerLink="/">TOP FIERA</h1>
+    </div>
+    <div class="nav-links">
+        <a href="/top40Tracks" class="link-top40">
+            TOP 40 SONGS
+        </a>
+        <a href="/top40Albums" class="link-topAlbums">
+            TOP 40 ALBUMS
+        </a>
+        <a href="/tipParade" class="link-tipParade">
+            TIP PARADE
+        </a>
+        <a href="/top40Movies" class="link-topMovies">
+            TOP 40 MOVIES
+        </a>
+    </div>
+    <div class="nav-burger">
+        <button class='menu-btn' type="button" (click)='showMenu()'>
+            <mat-icon>
+                <span class="material-icons-outlined">
+                    menu
+                    </span>
+            </mat-icon>
+        </button>
+    </div>
+</div>
+<div [class.dropdown]="showDropdown" class='dropdown-hidden'>
+<ul [class.dropdown-content]="showDropdown" class='dropdown-content-hidden'>
+    <li>
+        <a href="/top40Tracks">
+            TOP 40 SONGS
+        </a>
+    </li>
+    <li>
+        <a href="/top40Albums" class="link-topAlbums">
+            TOP 40 ALBUMS
+        </a>
+    </li>
+    <li>
+        <a href="/tipParade" class="link-tipParade">
+            TIP PARADE
+        </a>
+    </li>
+    <li>
+        <a href="/top40Movies" class="link-topMovies">
+            TOP 40 MOVIES
+        </a>
+    </li>
+</ul>
+</div>
+    </nav>

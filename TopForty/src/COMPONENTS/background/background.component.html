@@ -1,0 +1,33 @@
+<div class="mobile-view-home">
+    <div class="header">
+        <h1>TOP <br>FIERA</h1>
+        <button class='menu-btn' type="button" (click)='showMenu()'>
+            <img src='../../assets/play-gif.gif' alt='eyes-icon'/>
+        </button>
+    <div  [class.dropdown]="showDropdown" class='dropdown-hidden'>
+        <ul [class.dropdown-content]="showDropdown" class='dropdown-content-hidden'>
+            <li>
+                <a href="top40Tracks" class="">
+                TOP 40 SONGS
+                </a>
+            </li>
+            <li>
+                <a href="top40Albums" class="">
+                    TOP 40 ALBUMS
+                </a>
+            </li>
+            <li>
+                <a href="tipParade" class="">
+                    TIP PARADE
+                </a>
+             </li>
+            <li>
+                <a href="top40Movies" class="">
+                    TOP 40 MOVIES
+                </a>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+</div>

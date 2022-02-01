@@ -1,0 +1,56 @@
+<app-nav></app-nav>
+<div class="topmovie-chart">
+    <div class="topmovie-filter">
+        <div class="week-navigator">
+            <mat-form-field>
+                <mat-select (selectionChange)="handleWeekChange($event)" 
+                            placeholder='Select week'
+                            [value]="defaultSelectedWeek">
+                    <ng-container *ngFor="let week of availableWeeks$ | async">
+                        <mat-option [value]="week">
+                            {{week}}
+                        </mat-option>    
+                    </ng-container>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="year-navigator">
+            <mat-form-field>
+                <mat-select (selectionChange)="handleYearChange($event)" 
+                            placeholder='Select year'
+                            [value]="defaultSelectedYear">
+                    <ng-container *ngFor="let year of years">
+                        <mat-option [value]="year">
+                            {{year}}
+                        </mat-option>    
+                    </ng-container>
+                </mat-select>
+            </mat-form-field>
+        </div> 
+    </div>
+    <table class='table'>
+            <tr>
+              <th>No.</th>
+              <th class='hide-col'>PREVIOUS</th>
+              <th class='hide-col'>ACC</th>
+              <th>COVER</th>
+              <th class='col-title'>TITLE</th>
+              <th class='col-title'>DIRECTOR</th>
+              <th class='hide-col'>LABEL</th>
+            </tr>
+            <ng-container *ngFor='let movie of Top40Movies$ | async'>
+            <tr>
+              <td >{{movie.position}}</td>
+              <td class='hide-col'>{{movie.prev_position}}</td>
+              <td class='hide-col'>{{movie.num_weeks_cumulative}}</td>
+              <td>
+                  <img [src]="movie.cover_img_url_small" alt="movie-cover">
+              </td>
+              <td class='col'>{{movie.title}}</td>
+              <td class='col'>{{movie.credit}}</td>
+              <td class='hide-col'>{{movie.label}}</td>
+            </tr>
+    </ng-container>
+</table>
+</div>
+<app-footer></app-footer>

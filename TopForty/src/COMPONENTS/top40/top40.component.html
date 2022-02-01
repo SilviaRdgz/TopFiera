@@ -1,0 +1,36 @@
+
+<div class="video-player-section">
+    <h1>TOP 40 Songs</h1>
+    <div class="video-player-container">
+      <div class="video-player-module">
+        <youtube-player
+        [videoId]=VideoId
+        suggestedQuality='highres'
+        [height]='400'
+        [width]='600'
+        [startSeconds]='1'>
+    </youtube-player>
+      </div>
+      <cdk-virtual-scroll-viewport itemSize='40' class="scrolling-view">
+        <div class="top40-videolist-module" *cdkVirtualFor = 'let track of Top40'>
+          <ul class="top40-videolist">
+            <li class="top40-videolist-item">
+              <a (click)=playVideo(track.youtube_code) class="top40-videolist-item-link">
+                <div class="">
+                  <img [src]="track.cover_img_url_small"  alt="song-cover" class="lazy-image lazy-image_img--loaded">
+                </div>
+                <div class="top40-videolist-item-link-content">
+                  <h2>
+                    {{track.credit}}
+                  </h2>
+                  <p class="">
+                    {{track.title}}
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+</div>

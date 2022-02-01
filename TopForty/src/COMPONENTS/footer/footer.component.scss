@@ -1,0 +1,84 @@
+.footer-container {
+
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    background-size: cover;
+    width: 100%;
+    height: 250px;   
+    background-color:#1a1a1a;
+    margin-top: 150px;
+    position: absolute;
+}
+.footer-socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #1a1a1a;
+    padding: 20px 20px;
+}
+.h1:hover {
+   color: #f7d038
+}
+h1 {
+    color: white;
+    background-color: #1a1a1a;
+    font-size: 1rem;
+    cursor: pointer;
+}
+h1:hover {
+    color: #f7d038
+ }
+a, p {
+    color: white;
+    background-color: #1a1a1a;
+    font-size: 15px;
+}
+a {
+    text-decoration: none;
+    // padding: 0px 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+a:hover{
+    border-bottom: 1px solid white;
+
+}
+p {
+    font-size: 10px;
+    padding: 20px;
+}
+.footer-links{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+background-color: #1a1a1a;
+}
+.footer-rights{
+align-self: center;
+background-color: #1a1a1a;
+}
+
+@media only screen and (min-width: 769px){
+.footer-container{
+    display: flex;
+}
+.footer-socials {
+width:50% ;
+align-self: center;
+}    
+.footer-socials h1 {
+        font-size: 2rem;
+    }
+.footer-links {
+width: 50%;
+align-self: center;
+}
+a {
+    font-size: 1rem;
+}
+p {
+    font-size: 15px;
+}
+
+}

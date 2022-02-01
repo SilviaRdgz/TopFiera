@@ -1,0 +1,51 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/**"
+        ]
+
+
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "Fiera-api",
+      "urls": [
+        "https://www.top40.nl/app_api/top40_json/1",
+        "https://www.top40.nl/app_api/top40_json/2",
+        "https://www.top40.nl/app_api/top40_json/4"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 160,
+        "maxAge": "1h",
+        "timeout": "10s"
+      }
+    }
+  ]
+}

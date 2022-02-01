@@ -1,0 +1,95 @@
+.header-container{
+    display: none;
+}
+
+@media only screen and (min-width: 768px){
+    .header-container{
+        background-color: #f7f7f7;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 30vh;
+        margin-bottom: 20px;
+        position: absolute;
+        top: 0;
+        z-index: 99;
+
+    }
+    .header-socials {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: #f7f7f7;
+            width: 10%;
+            margin-top: 20px;
+     }
+
+        .facebook-icon {
+            align-self: center;
+            cursor: pointer;
+        }
+        .instagram-icon{
+            align-self: center;
+            cursor: pointer;
+        }
+        .youtube-icon{
+            align-self: center;
+            cursor: pointer;
+        }
+        .header-functionalities {
+            width: 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .header-functionalities-burger {
+            align-self: center;
+            cursor: pointer;
+        }
+        .header-functionalities-search {
+            align-self: center;
+            cursor: pointer;
+        }
+        .open-search-btn {
+            border: none;
+            background: transparent;
+        }
+        .header-functionalities-listen {
+            align-self: center;
+            cursor: pointer;
+        }
+        .material-icons-outlined:hover {
+        color: #f7d038;
+        }
+        .header-navbar{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 80%;
+        }
+        .header-navbar-title {
+            align-self: center;
+        }
+        .header-navbar-title h1{
+            font-size:4rem;
+        }
+        .header-navbar-links{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        a:hover {
+        border-bottom: 3px solid #f7d038;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 25px;
+       }
+
+}
+
+
